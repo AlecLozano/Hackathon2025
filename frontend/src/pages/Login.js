@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./App.css";
-import HomePage from "./HomePage.jsx";
+import HomePage from "./HomePage";
 
 function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm();
