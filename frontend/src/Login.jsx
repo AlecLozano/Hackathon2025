@@ -20,16 +20,8 @@ function Login() {
     };
 
     return (
-        <>
-            <p className="title">Login Form</p>
-            {message && <p style={{ color: message.includes("successfully") ? "green" : "red" }}>{message}</p>}
-            <form className="App" onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" {...register("email", { required: true })} placeholder="Email" />
-                {errors.email && <span style={{ color: "red" }}>*Email* is mandatory</span>}
-                <input type="password" {...register("password", { required: true })} placeholder="Password" />
-                <input type="submit" value="Login" style={{ backgroundColor: "#a1eafb" }} />
-            </form>
-        </>
+        <text>hi!</text>
     );
 }
+
 export default Login;
