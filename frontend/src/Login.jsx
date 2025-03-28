@@ -20,7 +20,32 @@ function Login() {
     };
 
     return (
-        <text>hi!</text>
+        <div className="login-container">
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        {...register("email", { required: "Email is required" })}
+                    />
+                    {errors.email && <p>{errors.email.message}</p>}
+                </div>
+                
+                <div>
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        {...register("password", { required: "Password is required" })}
+                    />
+                    {errors.password && <p>{errors.password.message}</p>}
+                </div>
+
+                <button type="submit">Log In</button>
+            </form>
+
+            {/* Display the login message */}
+            {message && <p>{message}</p>}
+        </div>
     );
 }
 
