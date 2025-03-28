@@ -1,38 +1,33 @@
-// inside src/Login.jsx
-
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
 function Login() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [message, setMessage] = useState(""); // State for login messages
 
     const onSubmit = (data) => {
         const userData = JSON.parse(localStorage.getItem(data.email));
-        if (userData) { // getItem can return actual value or null
+        if (userData) {
             if (userData.password === data.password) {
-                console.log(userData.name + " You Are Successfully Logged In");
+                setMessage(`${userData.name}, you are successfully logged in!`);
             } else {
-                console.log("Email or Password is not matching with our record");
+                setMessage("Email or Password is incorrect.");
             }
         } else {
-            console.log("Email or Password is not matching with our record");
+            setMessage("Email or Password is incorrect.");
         }
     };
+
     return (
         <>
             <p className="title">Login Form</p>
-
+            {message && <p style={{ color: message.includes("successfully") ? "green" : "red" }}>{message}</p>}
             <form className="App" onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" {...register("email", { required: true })} />
-                {errors.email && <span style={{ color: "red" }}>
-                    *Email* is mandatory </span>}
-                <input type="password" {...register("password")} />
-                <input type={"submit"} style={{ backgroundColor: "#a1eafb" }} />
+                <input type="email" {...register("email", { required: true })} placeholder="Email" />
+                {errors.email && <span style={{ color: "red" }}>*Email* is mandatory</span>}
+                <input type="password" {...register("password", { required: true })} placeholder="Password" />
+                <input type="submit" value="Login" style={{ backgroundColor: "#a1eafb" }} />
             </form>
         </>
     );
