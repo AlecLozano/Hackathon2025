@@ -11,6 +11,8 @@ function App() {
         localStorage.setItem(data.email, JSON.stringify(data)); // Store user details
         console.log("User Registered:", data);
         setRegistered(true); // Switch to Login page
+
+        
     };
 
     return (
