@@ -1,4 +1,5 @@
 // inside src/App.js
+// Replace previous code with this.
 
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -7,12 +8,7 @@ import "./App.css";
 function App() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-      localStorage.setItem(data.email, JSON.stringify({ 
-        name: data.name, password: data.password 
-      }));
-      console.log(JSON.parse(localStorage.getItem(data.email)));
-    };
+    const onSubmit = (data) => console.log(data);
 
     return (
         <>
