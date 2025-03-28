@@ -6,6 +6,8 @@ import Login from "./Login"; // Import Login Component
 function App() {
     const [registered, setRegistered] = useState(false); // State to track registration
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
     const onSubmit = (data) => {
         localStorage.setItem(data.email, JSON.stringify(data)); // Store user details
