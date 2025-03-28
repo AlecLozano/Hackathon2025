@@ -1,0 +1,13 @@
+version: "3.8"  # Use a valid Compose version
+
+services:
+  frontend:
+    image: react-app:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"  # Map port 3000 on the host to port 80 in the container
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules  # Prevent overriding node_modules with volume
