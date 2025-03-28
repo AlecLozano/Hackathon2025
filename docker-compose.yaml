@@ -3,11 +3,15 @@ version: "3.8"  # Use a valid Compose version
 services:
   frontend:
     image: react-app:latest
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    container_name: frontend
+    build: ./frontend
     ports:
-      - "3000:80"  # Map port 3000 on the host to port 80 in the container
+      - "3000:3000"  # Map port 3000 on the host to port 80 in the container
     volumes:
       - ./frontend:/app
-      - /app/node_modules  # Prevent overriding node_modules with volume
+      - /app/node_modules  
+  
+  postgres:
+    image: docker pull postgres:17.4
+      container_name: postgres
+
