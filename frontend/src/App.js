@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import { ChakraProvider } from '@chakra-ui/react'
+import Format from './components/Format.css'
+import { Routes, Route } from "react-router-dom"
+
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
 
 function App() {
   return (
-    <ChakraProvider>
-      <TheRestOfYourApplication />
-    </ChakraProvider>
+    <div className='App'>
+      <Routes>
+        <Route path='/' element= {<Login />} />
+        <Route path='/register' element= {<Register />} />
+      </Routes>
+    </div>
   )
 }
 

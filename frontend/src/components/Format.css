@@ -1,0 +1,29 @@
+.Box {
+    background-color: #fdc03d;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 4%;
+}
+
+.In-Box {
+    background-color: #FBDEA1;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 4%;
+}
+
+.App {
+    background-color: #631bd8;
+    background-size: cover;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.login {
+    margin: 0 auto; 
+    width:300px;
+}
